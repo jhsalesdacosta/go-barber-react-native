@@ -1,14 +1,22 @@
-import { Image, SafeAreaView, View } from "react-native";
+import { Image, View, ImageProps } from "react-native";
 import  ImageProfile  from "@/assets/image/imageProfile.png"
 import { s } from "./style";
 
 
-export function ProfilePicture() {
+type Props = ImageProps &{
+
+
+
+}
+
+
+export function ProfilePicture({...rest}: Props) {
   return (
     <View>
       <Image
         source={ImageProfile}
-        style={s.image}
+        style={[s.image, rest.style]}
+        {...rest}
       />
     </View>
   )

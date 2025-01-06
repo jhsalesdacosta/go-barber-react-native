@@ -6,13 +6,14 @@ export const s = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "row",
-        width: 327,
-        height: 112,
+        maxWidth: 327,
+        maxHeight: 112,
         borderRadius: 10,
         backgroundColor: colors.black.soft,
         alignItems: "center",
-        justifyContent: "center"
-
+        justifyContent: "center",
+        
+    
     },
 
     image: {

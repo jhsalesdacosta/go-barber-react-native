@@ -1,39 +1,42 @@
-import { Image, Text, View } from "react-native";
+import { Image, Text, TextProps, TouchableOpacity, View } from "react-native";
 import { s } from "./style";
 import ImageProfile from "@/assets/image/imageProfile.png"
 import { colors, fontFamily } from "@/style/theme";
 import { IconCalendar, IconClock } from "@tabler/icons-react-native"
 import { Icon } from "../Button";
+import { router } from "expo-router";
 
 
-export default function Barbers() {
+
+export default function Barbers({children}: TextProps) {
     return (
-        <View style={s.container}>
-            <Image
-                source={ImageProfile}
-                style={s.image}
-            />
+        <TouchableOpacity onPress={() => router.navigate("/scheduled")}>
+            <View style={s.container}>
+                <Image
+                    source={ImageProfile}
+                    style={s.image}
+                />
 
-            <View style={s.content}>
-                <Text style={s.title}>Diego Fernandes</Text>
-                <View style={s.details}>
+                <View style={s.content}>
+                    <Text style={s.title}>{children}</Text>
+                    <View style={s.details}>
 
-                    <IconCalendar style={s.iconDetails}/>
-                    
-                    <Text style={{ color: colors.gray.base, fontFamily: fontFamily.regular, fontSize: 12 }}>Segunda à sexta</Text>
+                        <IconCalendar color={s.iconDetails.color} />
 
-                </View>
+                        <Text style={{ color: colors.gray.base, fontFamily: fontFamily.regular, fontSize: 12 }}>Segunda à sexta</Text>
 
-                <View style={s.details}>
+                    </View>
 
-                    <IconClock style={s.iconDetails}/>
+                    <View style={s.details}>
 
-                    <Text style={{ color: colors.gray.base, fontFamily: fontFamily.regular, fontSize: 12 }}>08h às 18h</Text>
+                        <IconClock color={s.iconDetails.color} />
+
+                        <Text style={{ color: colors.gray.base, fontFamily: fontFamily.regular, fontSize: 12 }}>08h às 18h</Text>
 
 
+                    </View>
                 </View>
             </View>
-        </View>
-
+        </TouchableOpacity>
     )
 }

@@ -4,14 +4,17 @@ import Barbers from "../barbers";
 
 export function Barber() {
     return (
-        <View style={{gap:25, marginTop:40}}>
+        <View style={{ flex: 1, gap: 20, marginTop: 25,  width: 327 }}>
             <Text style={s.text}>Cabeleireiros</Text>
-            <ScrollView>
-                <Barbers/>
-                {/* <FlatList>
+
+            <ScrollView >
+                <Barbers >Fernando Oliveira</Barbers>
+            </ScrollView>
+
+            {/* <FlatList>
                 
                 </FlatList> */}
-            </ScrollView>
+
         </View>
     )
 }
